@@ -134,3 +134,179 @@ footer ul li {
   box-shadow: var(--ombre);
   z-index: 999;
 }
+/* ===== HERO ===== */
+#hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+#hero h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+#hero img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--ombre);
+}
+#hero .btn-primary {
+  background-color: var(--couleur-primaire);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+#hero .btn-outline-primary {
+  border: 2px solid var(--couleur-primaire);
+  color: var(--couleur-primaire);
+  padding: 12px 30px;
+  border-radius: 50px;
+}
+/* ===== STATS ===== */
+#stats {
+  margin-top: 50px;
+  padding: 40px 0;
+  border-top: 1px solid #E2E8F0;
+}
+
+#stats h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--couleur-primaire);
+}
+/* ===== BENTO GRID ===== */
+#comment-ca-marche {
+  background-color: #F8FAFC;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.bento-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--ombre);
+}
+.bento-card:nth-child(1) {
+  grid-column: span 2;
+  background-color: var(--couleur-primaire);
+  color: white;
+}
+
+.bento-card:nth-child(1) h3 {
+  color: white;
+}
+
+.bento-card .step-number {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.3;
+}
+.bento-card:nth-child(1) {
+  grid-column: span 2;
+  background-color: var(--couleur-primaire);
+  color: white;
+}
+
+.bento-card:nth-child(1) h3 {
+  color: white;
+}
+
+.bento-card .step-number {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.3;
+}
+#categories .card:hover {
+  border-color: var(--couleur-primaire);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+}
+/* ===== TEMOIGNAGES ===== */
+#temoignages {
+  background-color: #F8FAFC;
+}
+
+.temoignage-card {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.temoignage-card blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin: 15px 0;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--couleur-primaire);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+/* ===== CTA ===== */
+#cta {
+  background-color: var(--couleur-primaire);
+  padding: 80px 0;
+}
+
+#cta h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+#cta p {
+  color: white;
+  opacity: 0.9;
+}
+
+#cta .btn {
+  background-color: white;
+  color: var(--couleur-primaire);
+  font-weight: 700;
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: none;
+}
+/* ===== NAVBAR SCROLLED ===== */
+.navbar-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  padding: 8px 0 !important;
+  transition: all 0.3s ease;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+body.dark-mode .card {
+  background-color: #1E293B;
+  color: #E2E8F0;
+}
+
+body.dark-mode #mainNav {
+  background-color: #0F172A;
+}
+
+body.dark-mode footer {
+  background-color: #0F172A;
+}
