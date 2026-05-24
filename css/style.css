@@ -1,0 +1,136 @@
+/* ===== IMPORT GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap');
+
+/* ===== VARIABLES CSS ===== */
+:root {
+  --couleur-primaire: #F97316;
+  --couleur-secondaire: #1E293B;
+  --couleur-accent: #10B981;
+  --couleur-fond: #FFFFFF;
+  --couleur-texte: #334155;
+  --police-titre: 'Poppins', sans-serif;
+  --police-corps: 'Inter', sans-serif;
+  --ombre: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--police-corps);
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--police-titre);
+  color: var(--couleur-secondaire);
+}
+a {
+  text-decoration: none;
+  color: var(--couleur-primaire);
+}
+
+section {
+  padding: 60px 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+/* ===== NAVBAR ===== */
+#mainNav {
+  background-color: var(--couleur-secondaire);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--ombre);
+}
+
+.navbar-brand {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--couleur-primaire) !important;
+}
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 5px;
+}
+
+.nav-link:hover {
+  color: var(--couleur-primaire) !important;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+}
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--couleur-secondaire);
+  color: white;
+  padding: 50px 0 20px;
+}
+
+footer h4 {
+  color: var(--couleur-primaire);
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #CBD5E1;
+}
+footer a:hover {
+  color: var(--couleur-primaire);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+/* ===== CARDS ===== */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--ombre);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+/* ===== BOUTON RETOUR EN HAUT ===== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--couleur-primaire);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: var(--ombre);
+  z-index: 999;
+}
