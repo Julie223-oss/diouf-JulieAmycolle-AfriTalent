@@ -310,3 +310,83 @@ body.dark-mode #mainNav {
 body.dark-mode footer {
   background-color: #0F172A;
 }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #hero {
+    padding: 50px 0;
+    min-height: auto;
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero h2 {
+    font-size: 1rem;
+  }
+   #hero img {
+    margin-top: 30px;
+    max-width: 100%;
+  }
+
+  #hero .btn-primary,
+  #hero .btn-outline-primary {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+   .bento-card:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  footer .col-md-6 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+   .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  #cta h2 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+ .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  #cta h2 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
