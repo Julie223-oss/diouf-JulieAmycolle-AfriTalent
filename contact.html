@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AfriTalent</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AfriTalent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary ms-3">Rejoindre AfriTalent</a>
+                <button class="btn btn-outline-secondary ms-2" id="darkModeToggle">
+                    <i class="bi bi-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE CONTACT ===== -->
+    <main class="contact-page py-5">
+        <div class="container">
+            <h1 class="text-center section-title mb-3">Contactez-nous</h1>
+            <p class="text-center text-muted mb-5">Une question ? Un projet ? Écrivez-nous !</p>
+
+            <div class="row g-5">
+                <!-- ===== FORMULAIRE ===== -->
+                <div class="col-lg-7">
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="prenom" class="form-label fw-semibold">Prénom</label>
+                                <input type="text" id="prenom" class="form-control" placeholder="Votre prénom" required>
+                                <div id="prenomError" class="text-danger small mt-1"></div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="nom" class="form-label fw-semibold">Nom</label>
+                                <input type="text" id="nom" class="form-control" placeholder="Votre nom" required>
+                                <div id="nomError" class="text-danger small mt-1"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="exemple@email.com" required>
+                            <div id="emailError" class="text-danger small mt-1"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sujet" class="form-label fw-semibold">Sujet</label>
+                            <select id="sujet" class="form-select" required>
+                                <option value="">Choisissez un sujet</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="freelance">Devenir freelance</option>
+                                <option value="entreprise">Recruter un freelance</option>
+                                <option value="reclamation">Réclamation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <div id="sujetError" class="text-danger small mt-1"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-semibold">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Votre message (minimum 20 caractères)" required></textarea>
+                            <div id="messageError" class="text-danger small mt-1"></div>
+                            <div class="form-text">Minimum 20 caractères.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg px-5">Envoyer</button>
+                        <div id="successMessage" class="mt-3" style="display:none;"></div>
+                    </form>
+                </div>
+
+                <!-- ===== INFORMATIONS DE CONTACT ===== -->
+                <div class="col-lg-5">
+                    <div class="contact-info p-4 bg-light rounded-4">
+                        <h4 class="mb-4">Nos coordonnées</h4>
+                        <div class="mb-3">
+                            <i class="bi bi-envelope fs-5 text-primary me-3"></i>
+                            <span>contact@AfriTalent.com</span>
+                        </div>
+                        <div class="mb-3">
+                            <i class="bi bi-telephone fs-5 text-primary me-3"></i>
+                            <span>77 555 4003</span>
+                        </div>
+                        <div class="mb-3">
+                            <i class="bi bi-geo-alt fs-5 text-primary me-3"></i>
+                            <span>Dakar, Sénégal</span>
+                        </div>
+                        <div class="mb-3">
+                            <i class="bi bi-clock fs-5 text-primary me-3"></i>
+                            <span>Lun - Ven : 8h - 18h</span>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h5 class="mb-3">Suivez-nous</h5>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary rounded-circle me-2"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-primary rounded-circle me-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-primary rounded-circle me-2"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="btn btn-outline-primary rounded-circle"><i class="bi bi-instagram"></i></a>
+                        </div>
+
+                        <!-- ===== GOOGLE MAPS ===== -->
+                        <hr class="my-4">
+                        <h5 class="mb-3">Nous trouver</h5>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.852212486645!2d-17.447186!3d14.693724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQxJzM3LjQiTiAxN8KwMjYnNDkuNyJX!5e0!3m2!1sfr!2ssn!4v1234567890" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0; border-radius: 12px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>AfriTalent</h5>
+                    <p>La plateforme de référence pour connecter les freelances tech avec les entreprises.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Liens utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="freelances.html">Freelances</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Ressources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p><i class="bi bi-envelope"></i> contact@AfriTalent.com</p>
+                    <p><i class="bi bi-telephone"></i> 77 555 4003</p>
+                    <p><i class="bi bi-geo-alt"></i> Dakar, Sénégal</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center pt-4 mt-4 border-top">
+                <p>© <span id="currentYear">2026</span> AfriTalent. Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOUTON RETOUR EN HAUT ===== -->
+    <button id="backToTop" class="btn btn-primary rounded-circle">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
