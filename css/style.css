@@ -467,3 +467,248 @@ body.dark-mode footer {
         padding: 20px 15px;
     }
 }
+
+/* ===== RESPONSIVE - TABLETTE (max-width: 992px) ===== */
+@media (max-width: 992px) {
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero .counters-section {
+        justify-content: center;
+    }
+    
+    /* Catégories */
+    .cat-card {
+        padding: 25px 15px;
+    }
+    
+    /* Bento Grid */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Témoignages */
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    /* Footer */
+    footer .row > div {
+        margin-bottom: 30px;
+    }
+}
+
+/* ===== RESPONSIVE - MOBILE (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    /* Général */
+    body {
+        padding-top: 60px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 100px 0 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero .counters-section {
+        margin-top: 30px !important;
+    }
+    
+    .hero .counters-section .display-4 {
+        font-size: 2rem !important;
+    }
+    
+    /* Boutons */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Bento Grid */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .step-card {
+        padding: 20px 15px;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+    }
+    
+    /* Catégories */
+    .cat-card {
+        padding: 20px 15px;
+    }
+    
+    .cat-card i {
+        font-size: 2.5rem;
+    }
+    
+    /* Témoignages */
+    .testimonial-card {
+        padding: 15px;
+    }
+    
+    .testimonial-card img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .testimonial-card .stars {
+        font-size: 1.2rem;
+    }
+    
+    /* CTA */
+    .cta-banner {
+        padding: 50px 0;
+    }
+    
+    .cta-banner h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-banner .btn-light {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 40px 0 20px;
+    }
+    
+    footer h5 {
+        font-size: 1.1rem;
+    }
+    
+    footer .social-icons a {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+    
+    /* Back to Top */
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ===== RESPONSIVE - PETIT MOBILE (max-width: 576px) ===== */
+@media (max-width: 576px) {
+    /* Hero */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+    
+    .hero .counters-section .display-4 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero .counters-section p {
+        font-size: 0.8rem;
+    }
+    
+    /* Section titre */
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Catégories */
+    .categories .row {
+        flex-direction: column;
+    }
+    
+    .cat-card {
+        padding: 15px;
+    }
+    
+    .cat-card i {
+        font-size: 2rem;
+    }
+    
+    /* Témoignages */
+    .testimonial-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== RESPONSIVE - GRANDE TABLETTE / PETIT DESKTOP ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* ===== RESPONSIVE - IMPRESSION ===== */
+@media print {
+    .navbar {
+        display: none;
+    }
+    
+    #backToTop {
+        display: none;
+    }
+    
+    .cta-banner {
+        background: #6C63FF !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
