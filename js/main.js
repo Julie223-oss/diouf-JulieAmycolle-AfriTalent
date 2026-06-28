@@ -170,3 +170,157 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+
+// ============================================================
+// 9. FILTRAGE DYNAMIQUE DES FREELANCES
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const freelanceCards = document.querySelectorAll('.freelance-card');
+
+    // Vérifier si on est sur la page freelances
+    if (filterButtons.length === 0 || freelanceCards.length === 0) return;
+
+    // Ajouter l'événement click sur chaque bouton
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // 9.1 Retirer la classe "active" de tous les boutons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            
+            // 9.2 Ajouter la classe "active" au bouton cliqué
+            this.classList.add('active');
+
+            // 9.3 Récupérer la catégorie sélectionnée
+            const category = this.getAttribute('data-category');
+
+            // 9.4 Filtrer les cartes
+            freelanceCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || category === cardCategory) {
+                    card.style.display = 'block';
+                    // Ajouter une animation d'apparition
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// ============================================================
+// 10. VALIDATION DU FORMULAIRE DE CONTACT
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    // Vérifier si on est sur la page contact
+    if (!form) return;
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêcher l'envoi réel
+
+        let isValid = true;
+
+        // 10.1 Vérifier tous les champs requis
+        const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+        inputs.forEach(input => {
+            const errorDiv = document.getElementById(input.id + 'Error');
+            if (!input.value.trim()) {
+                input.classList.add('is-invalid');
+                if (errorDiv) {
+                    errorDiv.textContent = 'Ce champ est requis.';
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            } else {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            }
+        });
+
+        // 10.2 Vérifier le format de l'email
+        const emailInput = document.getElementById('email');
+        if (emailInput && emailInput.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const errorDiv = document.getElementById('emailError');
+            if (!emailRegex.test(emailInput.value.trim())) {
+                emailInput.classList.add('is-invalid');
+                emailInput.classList.remove('is-valid');
+                if (errorDiv) {
+                    errorDiv.textContent = 'Veuillez entrer une adresse email valide.';
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            }
+        }
+
+        // 10.3 Vérifier la longueur du message (minimum 20 caractères)
+        const messageInput = document.getElementById('message');
+        if (messageInput && messageInput.value.trim()) {
+            const errorDiv = document.getElementById('messageError');
+            if (messageInput.value.trim().length < 20) {
+                messageInput.classList.add('is-invalid');
+                messageInput.classList.remove('is-valid');
+                if (errorDiv) {
+                    errorDiv.textContent = 'Le message doit contenir au moins 20 caractères.';
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            }
+        }
+
+        // 10.4 Afficher le message de succès ou d'erreur
+        if (isValid) {
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                successMessage.className = 'alert alert-success mt-3';
+                successMessage.textContent = '✅ Votre message a été envoyé avec succès !';
+                successMessage.style.display = 'block';
+                
+                // Réinitialiser le formulaire
+                form.reset();
+                form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
+                
+                // Masquer le message après 5 secondes
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        } else {
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                successMessage.className = 'alert alert-danger mt-3';
+                successMessage.textContent = '❌ Veuillez corriger les erreurs ci-dessus.';
+                successMessage.style.display = 'block';
+            }
+            // Faire défiler jusqu'au premier champ invalide
+            const firstInvalid = form.querySelector('.is-invalid');
+            if (firstInvalid) {
+                firstInvalid.focus();
+            }
+        }
+    });
+});
+
+// ============================================================
+// 11. ANIMATION D'APPARITION POUR LE FILTRAGE
+// ============================================================
+// Ajouter cette règle CSS dynamiquement pour l'animation fadeIn
+document.addEventListener('DOMContentLoaded', function() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+});
+
