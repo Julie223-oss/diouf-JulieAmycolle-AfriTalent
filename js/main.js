@@ -70,3 +70,103 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 })
+
+
+// ============================================================
+// 4. COMPTEURS ANIMÉS - Intersection Observer
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.counter');
+    
+    // Vérifier s'il y a des compteurs sur la page
+    if (counters.length === 0) return;
+
+    // Fonction pour animer un compteur
+    function animateCounter(counter) {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 150;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        updateCounter();
+    }
+
+    // Observer pour détecter l'apparition des compteurs
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                animateCounter(counter);
+                observer.unobserve(counter); // Arrêter d'observer une fois animé
+            }
+        });
+    }, {
+        threshold: 0.3, // Déclencher quand 30% de l'élément est visible
+        rootMargin: '0px 0px -50px 0px' // Déclencher un peu avant que l'élément soit visible
+    });
+
+    // Observer chaque compteur
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
+
+// ============================================================
+// 5. ANIMATIONS FADE-IN - Intersection Observer
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    // Vérifier s'il y a des éléments à animer
+    if (fadeElements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Arrêter d'observer une fois animé
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+// ============================================================
+// 6. ANNÉE DYNAMIQUE DANS LE FOOTER
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+});
+
+// ============================================================
+// 7. ACTIVER LE DARK MODE SUR LE BOUTON (si présent)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('darkModeToggle');
+    if (toggleBtn) {
+        // Vérifier si le mode sombre est activé
+        if (document.body.classList.contains('dark-mode')) {
+            toggleBtn.innerHTML = '<i class="bi bi-sun"></i>';
+        } else {
+            toggleBtn.innerHTML = '<i class="bi bi-moon"></i>';
+        }
+    }
+});
+
